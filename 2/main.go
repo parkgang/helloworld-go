@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
-func main() {
-	guide := "조건문을 배울 예정입니다."
-	fmt.Println("Hello, world", guide)
+func Task1() {
+	broken := "G# r#cks!"
+	fixed := strings.NewReplacer("#", "o").Replace(broken)
+	fmt.Println(fixed)
 }
