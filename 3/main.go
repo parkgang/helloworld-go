@@ -7,9 +7,9 @@ func main() {
 	width = 4.2
 	height = 3.0
 	area = width * height
-	fmt.Println(area/10.0, "liters neded")
+	fmt.Printf("%.2f\n", area/10.0)
 	width = 5.2
 	height = 3.5
 	area = width * height
-	fmt.Println(area/10.0, "liters neded")
+	fmt.Printf("%.2f\n", area/10.0)
 }
