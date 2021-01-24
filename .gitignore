@@ -1,7 +1,12 @@
-# macOS에서 발생하는 불필요한 파일
+## macOS에서 발생하는 불필요한 파일
 .DS_Store
 
-# Go
+## vscode Go plugin
+bin/
+pkg/mod/
+pkg/sumdb/
+
+## Go
 # Created by https://www.toptal.com/developers/gitignore/api/go
 # Edit at https://www.toptal.com/developers/gitignore?templates=go
 
