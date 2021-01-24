@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func paintNeeded(width float64, height float64) {
+func paintNeeded(width float64, height float64) float64 {
 	area := width * height
-	fmt.Printf("%.2f\n", area/10.0)
+	return area / 10.0
 }
 
 func main() {
-	paintNeeded(4.2, 3.0)
-	paintNeeded(5.2, 3.5)
-	paintNeeded(5.0, 3.3)
+	fmt.Printf("%.2f\n", paintNeeded(4.2, 3.0))
+	fmt.Printf("%.2f\n", paintNeeded(5.2, 3.5))
+	fmt.Printf("%.2f\n", paintNeeded(5.0, 3.3))
 }
