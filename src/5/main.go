@@ -9,7 +9,7 @@ func main() {
 		"3 신기해",
 	}
 
-	for i := 0; i < len(notes); i++ {
-		fmt.Println(notes[i])
+	for index, item := range notes {
+		fmt.Printf("%v: %v\n", index, item)
 	}
 }
