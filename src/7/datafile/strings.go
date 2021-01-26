@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-// GetStrings null
+// GetStrings 문자열을 읽어옵니다
 func GetStrings(fileName string) ([]string, error) {
 	var lines []string
 	file, err := os.Open(fileName)
@@ -22,7 +22,7 @@ func GetStrings(fileName string) ([]string, error) {
 		return nil, err
 	}
 	if scanner.Err() != nil {
-		return nil, err
+		return nil, scanner.Err()
 	}
 	return lines, nil
 }
