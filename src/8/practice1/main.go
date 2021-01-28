@@ -1,7 +1,7 @@
 package main
 
 import (
-	temptype "8/type"
+	temptype "8/practice1/types"
 	"fmt"
 )
 
