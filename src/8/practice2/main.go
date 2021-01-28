@@ -6,7 +6,15 @@ import (
 )
 
 func main() {
-	var employee magazine.Emplotee
-
-	fmt.Println(employee)
+	address := magazine.Address{
+		Street:     "123 Oak st",
+		City:       "Omaha",
+		State:      "NE",
+		PostalCode: "68111",
+	}
+	subscriber := magazine.Subscriber{
+		Name:        "Aman Singh",
+		HomeAddress: address,
+	}
+	fmt.Println(subscriber)
 }
