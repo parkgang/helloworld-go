@@ -13,8 +13,8 @@ func main() {
 		PostalCode: "68111",
 	}
 	subscriber := magazine.Subscriber{
-		Name:        "Aman Singh",
-		HomeAddress: address,
+		Name:    "Aman Singh",
+		Address: address,
 	}
 	fmt.Println(subscriber)
 }
