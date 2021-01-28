@@ -13,8 +13,14 @@ func main() {
 		PostalCode: "68111",
 	}
 	subscriber := magazine.Subscriber{
-		Name:    "Aman Singh",
-		Address: address,
+		Name: "Aman Singh",
 	}
+
+	// 익명 필드를 사용하여 바로 접근
+	subscriber.Street = address.Street
+	subscriber.City = address.City
+	subscriber.State = address.State
+	subscriber.PostalCode = address.PostalCode
+
 	fmt.Println(subscriber)
 }
