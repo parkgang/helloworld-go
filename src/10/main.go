@@ -1,4 +1,4 @@
-// Package main 주석 잘 써지나?
+// setter, getter 연습
 package main
 
 import (
@@ -7,6 +7,15 @@ import (
 )
 
 func main() {
-	value := calendar.Date{}
-	fmt.Println(value)
+	date := calendar.Date{}
+	date.Year = 2019
+	date.Month = 14
+	date.Day = 50
+	fmt.Println(date)
+	date = calendar.Date{
+		Year:  0,
+		Month: 0,
+		Day:   -2,
+	}
+	fmt.Println(date)
 }
