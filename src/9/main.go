@@ -4,25 +4,17 @@ import (
 	"fmt"
 )
 
-type MyType string
+type MyType int
 
-func (m MyType) methed() {
-	fmt.Println("리시버 변수:", m)
-}
-
-func (m *MyType) pointerMethod() {
-	fmt.Println("리시버 변수 주소:", m)
+func (m *MyType) trans(message string) {
+	fmt.Println(message)
+	*m = 99
 }
 
 func main() {
-	value := MyType("안녕하세요")
-	pointer := &value
+	value := MyType(2)
 
-	value.methed()
-	value.pointerMethod()
-
-	fmt.Println()
-
-	pointer.methed()
-	pointer.pointerMethod()
+	fmt.Println("value:", value)
+	value.trans("변환 작업 중")
+	fmt.Println("value:", value)
 }
