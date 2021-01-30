@@ -2,11 +2,14 @@ package main
 
 import (
 	"11/gadget"
-	"11/mypkg"
-	"fmt"
 )
 
-func playList(device gadget.TapePlayer, songs []string) {
+type Player interface {
+	Play(string)
+	Stop()
+}
+
+func playList(device Player, songs []string) {
 	for _, song := range songs {
 		device.Play(song)
 	}
@@ -14,17 +17,13 @@ func playList(device gadget.TapePlayer, songs []string) {
 }
 
 func main() {
-	// player := gadget.TapePlayer{}
-	// mixtape := []string{
-	// 	"Jessie's Girl",
-	// 	"Whip It",
-	// 	"9 to 5",
-	// }
-	// playList(player, mixtape)
-
-	var value mypkg.MyInterface
-	value = mypkg.MyType(5)
-	value.MethodWithoutParameters()
-	value.MethodWithParameter(127.3)
-	fmt.Println(value.MethodWithReturnValue())
+	mixtape := []string{
+		"Jessie's Girl",
+		"Whip It",
+		"9 to 5",
+	}
+	var player Player = gadget.TapePlayer{}
+	playList(player, mixtape)
+	player = gadget.TapeRecorder{}
+	playList(player, mixtape)
 }
