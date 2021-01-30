@@ -21,7 +21,7 @@ type Toggleable interface {
 
 func main() {
 	s := Switch("off")
-	var t Toggleable = &s
+	var t Toggleable = &s // 포인터를 대신 할당합니다.
 	t.toggle()
 	t.toggle()
 }
