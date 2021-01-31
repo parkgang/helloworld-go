@@ -4,19 +4,33 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"path/filepath"
 )
 
-func main() {
-	const rootPath = "/Users/kyungeun/Sources/repos/ruddms936/helloworld-go/src/12/recursion"
-	files, err := ioutil.ReadDir(rootPath)
+func scanDirectory(path string) error {
+	fmt.Println(path)
+	files, err := ioutil.ReadDir(path)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	for _, file := range files {
+		filePath := filepath.Join(path, file.Name())
 		if file.IsDir() {
-			fmt.Println("Directory:", file.Name())
+			err := scanDirectory(filePath)
+			if err != nil {
+				return err
+			}
 		} else {
-			fmt.Println("File:", file.Name())
+			fmt.Println(filePath)
 		}
+	}
+	return nil
+}
+
+func main() {
+	const rootPath = "/Users/kyungeun/Sources/repos/ruddms936/helloworld-go/src/12"
+	err := scanDirectory(rootPath)
+	if err != nil {
+		log.Fatal(err)
 	}
 }
