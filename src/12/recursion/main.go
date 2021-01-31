@@ -6,6 +6,17 @@ import (
 	"path/filepath"
 )
 
+func reportPanic() {
+	p := recover()
+	if p == nil {
+		return
+	}
+	err, ok := p.(error)
+	if ok {
+		fmt.Println(err)
+	}
+}
+
 func scanDirectory(path string) {
 	fmt.Println(path)
 	files, err := ioutil.ReadDir(path)
@@ -23,6 +34,7 @@ func scanDirectory(path string) {
 }
 
 func main() {
+	defer reportPanic()
 	const rootPath = "/Users/kyungeun/Sources/repos/ruddms936/helloworld-go/src/12"
 	scanDirectory(rootPath)
 }
