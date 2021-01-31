@@ -20,19 +20,19 @@ func GetFloats(fileName string) ([]float64, error) {
 	var numbers []float64
 	file, err := OpenFile(fileName)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
+	defer CloseFile(file)
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		number, err := strconv.ParseFloat(scanner.Text(), 64)
 		if err != nil {
-			log.Fatal(err)
+			return nil, err
 		}
 		numbers = append(numbers, number)
 	}
-	CloseFile(file)
 	if scanner.Err() != nil {
-		log.Fatal(scanner.Err())
+		return nil, scanner.Err()
 	}
 	return numbers, nil
 }
