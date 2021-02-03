@@ -8,13 +8,6 @@ import (
 	"time"
 )
 
-func main() {
-	go responseSize("https://example.com/")
-	go responseSize("https://golang.org/")
-	go responseSize("https://golang.org/doc")
-	time.Sleep(5 * time.Second)
-}
-
 func responseSize(url string) {
 	fmt.Println("Getting", url)
 	response, err := http.Get(url)
@@ -27,4 +20,11 @@ func responseSize(url string) {
 		log.Fatal(err)
 	}
 	fmt.Println(len(body))
+}
+
+func main() {
+	go responseSize("https://example.com/")
+	go responseSize("https://golang.org/")
+	go responseSize("https://golang.org/doc")
+	time.Sleep(5 * time.Second)
 }
