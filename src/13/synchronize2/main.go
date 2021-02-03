@@ -7,14 +7,14 @@ import (
 
 func reportNap(name string, delay int) {
 	for i := 0; i < delay; i++ {
-		fmt.Println(name, "잔다")
+		fmt.Println(name, "대기")
 		time.Sleep(1 * time.Second)
 	}
-	fmt.Println(name, "잠에서 깨다!")
+	fmt.Println(name, "가능!")
 }
 
 func send(myChannel chan string) {
-	reportNap("고루틴 전송", 2)
+	reportNap("전송", 2)
 	fmt.Println("***전송 값***")
 	myChannel <- "a"
 	fmt.Println("***전송 값***")
@@ -24,7 +24,7 @@ func send(myChannel chan string) {
 func main() {
 	myChannel := make(chan string)
 	go send(myChannel)
-	reportNap("고루틴 수신", 5)
+	reportNap("수신", 5)
 	fmt.Println(<-myChannel)
 	fmt.Println(<-myChannel)
 }
