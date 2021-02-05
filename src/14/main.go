@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"14/prose"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Hi")
+	value := []string{
+		"apple",
+		"orange",
+		"pear",
+		"banana",
+	}
+	fmt.Println(prose.JoinWithCommas(value))
 }
