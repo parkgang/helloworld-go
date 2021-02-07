@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+func sqyHi() {
+	fmt.Println("Hi")
+}
+
 func main() {
-	fmt.Println("first class function")
+	var myFunction func()
+	myFunction = sqyHi
+	myFunction()
 }
