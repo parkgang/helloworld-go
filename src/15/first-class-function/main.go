@@ -2,12 +2,18 @@ package main
 
 import "fmt"
 
-func sqyHi() {
+func sayHi() {
 	fmt.Println("Hi")
+}
+func sayBye() {
+	fmt.Println("Bye")
+}
+
+func twice(theFunction func()) {
+	theFunction()
 }
 
 func main() {
-	var myFunction func()
-	myFunction = sqyHi
-	myFunction()
+	twice(sayHi)
+	twice(sayBye)
 }
