@@ -9,7 +9,7 @@ func main() {
 	asciiString := "ABCDE"
 	utf8String := "БГДЖИ"
 
-	/// # 1
+	/// Example 1
 
 	// 영어이므로 ASCII 집합으로 저장이 가능하여 총 "5byte"를 차지합니다.
 	fmt.Println(len(asciiString))
@@ -20,7 +20,7 @@ func main() {
 	fmt.Println(utf8.RuneCountInString(asciiString))
 	fmt.Println(utf8.RuneCountInString(utf8String))
 
-	/// # 2
+	/// Example 2
 
 	asciiBytes := []byte(asciiString)
 	utf8Bytes := []byte(utf8String)
@@ -40,7 +40,8 @@ func main() {
 	// ЖИ => 바이트 슬라이스가 아닌 룬 슬라이스를 사용하면 문제없습니다.
 	fmt.Println(string(utf8RunesPartial))
 
-	/// # 3
+	/// Example 3
+
 	// byte 단위로 출력하기 때문에 깨지는 문자열이 발생할 수 있습니다.
 	for index, currentByte := range asciiBytes {
 		fmt.Printf("%d: %s\n", index, string(currentByte))
