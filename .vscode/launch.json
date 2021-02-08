@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceFolder}/src/4/hi"
+            "program": "${workspaceFolder}/src/playground/"
         }
     ]
 }
